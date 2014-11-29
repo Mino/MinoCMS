@@ -1,0 +1,31 @@
+{
+  "name": "minocms",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./minocms.js",
+  "dependencies": {
+    "express": "*",
+    "jade": "1.1.5",
+    "errorhandler": "*",
+    "request": "*",
+    "connect": "2.x",
+    "tracer": "*",
+    "minodb": "git+https://bestan:09915eb57c27b7417bc43e2735ab93890c76e4c9@github.com/MarcusLongmuir/MinoDB.git#develop",
+    "extend": "MarcusLongmuir/extend",
+    "fieldval" : "FieldVal/fieldval-js#develop",
+    "fieldval-basicval" : "FieldVal/fieldval-basicval-js#develop",
+    "fieldval-rules" : "FieldVal/fieldval-rules-js#develop",
+    "body-parser": "*",
+    "mustache-express": "*"
+  },
+  "devDependencies": {
+    "gulp-nodemon" : "*",
+    "gulp": "^3.6.1",
+    "gulp-util": "^2.2.14",
+    "gulp-imports" : "MarcusLongmuir/gulp-imports",
+    "gulp-less": "^1.2.3",
+    "gulp-concat": "^2.2.0",
+    "gulp-watch": "^0.6.2",
+    "gulp-plumber": "^0.6.1"
+  }
+}
