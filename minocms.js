@@ -1,7 +1,5 @@
-var FieldVal = require('fieldval');
 var logger = require('tracer').console();
 var express = require('express');
-var fieldval_rules = require('fieldval-rules');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
