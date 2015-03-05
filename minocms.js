@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
-var MinoSDK = require('minosdk');
 
 function MinoCMS(options) {
 	var cms = this;
@@ -22,10 +21,11 @@ function MinoCMS(options) {
     cms.data_server.use(bodyParser());
     cms.data_server.use(express.static(path.join(__dirname, 'public')));
     cms.data_server.get("/path/:path", function(req,res) {
-        cms.sdk.get([cms.full_path + req.params.path], function(get_err, get_res) {
+        cms.minodb.get([cms.full_path + req.params.path], function(get_err, get_res) {
             res.json(get_res.objects[0]);
         })
     });
+
 }
 
 MinoCMS.prototype.get_config_server = function(){
@@ -48,16 +48,14 @@ MinoCMS.prototype.init = function(minodb, callback){
 
     minodb.internal_server().use('/cms', cms.data_server);
     
-    cms.sdk = new MinoSDK(cms.user);
-    cms.sdk.set_local_api(cms.minodb.api);
-    cms.sdk.save([{
+    minodb.save([{
         "name": cms.folder_name,
         "path": "/" + cms.user + "/",
         "folder": true
     }], function(err, res) {
         logger.log(JSON.stringify(err, null, 4), res); 
 
-        cms.sdk.save_type({
+        minodb.save_type({
             "name":"cms_content",
             "display_name":"CMS Content",
             "type":"object",
