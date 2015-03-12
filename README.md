@@ -44,10 +44,10 @@ minocms.get("homepage.title", callback);
 ```
 
 ###jQuery plugin
-####$('#element).minocms_text(address)
+####$('#element').minocms_text(address)
 Asynchronously sets element's text to the value specified by a given address.
 
-####$('#element).minocms_text(address)
+####$('#element').minocms_text(address)
 Asynchronously sets element's html to the value specified by a given address.
 
 [fieldval-rules](https://github.com/FieldVal/fieldval-rules-js) documentation covers FVRule usage.
