@@ -24,7 +24,7 @@ var minocms = new MinoCMS(config);
 
 Available config options:
 * ```user```- username that should be making all API calls
-* ```folder_name``` - name of the folder where MinoVal should store custom validation rules (```/<user>/<folder_name>```)
+* ```folder_name``` - name of the folder where MinoCMS should store CMS items (```/<user>/<folder_name>/```)
 
 ##Frontend
 
