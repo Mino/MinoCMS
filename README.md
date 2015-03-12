@@ -3,10 +3,6 @@ MinoCMS
 
 MinoCMS is a [MinoDB](https://github.com/MarcusLongmuir/MinoDB/) plugin providing CMS functionality.
 
-##Features
-* Create, store and use custom validation rules defined in MinoVal UI
-
-
 #Example usage
 
 ```javascript
