@@ -51,3 +51,6 @@ Asynchronously sets element's text to the value specified by a given address.
 Asynchronously sets element's html to the value specified by a given address.
 
 [fieldval-rules](https://github.com/FieldVal/fieldval-rules-js) documentation covers FVRule usage.
+
+#Examples
+[mino-cms-example](https://github.com/bestan/mino-cms-example)
