@@ -1,7 +1,9 @@
 MinoCMS
 ==========
 
-MinoCMS is a [MinoDB](https://github.com/MarcusLongmuir/MinoDB/) plugin providing CMS functionality.
+MinoCMS is a [MinoDB](https://github.com/MarcusLongmuir/MinoDB/) plugin providing CMS functionality. 
+
+MinoCMS plugin provides an easy-to-use frontend interface to items stored in a ```cms``` folder. Typically, MinoDB browser or API are used for storing and modifying the data. Stored values can be both text and html.
 
 #Example usage
 
