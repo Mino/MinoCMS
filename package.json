@@ -10,7 +10,7 @@
     "request": "*",
     "connect": "2.x",
     "tracer": "*",
-    "minodb": "MarcusLongmuir/MinoDB#develop",
+    "minodb": "Mino/MinoDB#develop",
     "extend": "MarcusLongmuir/extend",
     "body-parser": "*",
     "mustache-express": "*"
