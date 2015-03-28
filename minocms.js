@@ -58,9 +58,8 @@ MinoCMS.prototype.init = function(minodb, callback){
         minodb.save_type({
             "name":"cms_content",
             "display_name":"CMS Content",
-            "type":"object",
-            "any": true,
-            "field_type":{
+            "type":"key_value",
+            "value_field":{
                 "type":"string"
             }
         }, function(err, res){
