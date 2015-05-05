@@ -9,7 +9,7 @@
     "errorhandler": "*",
     "request": "*",
     "connect": "2.x",
-    "tracer": "*",
+    "mino-logger": "Mino/mino-logger#0f8b81f946ebd956aea2fb66ea3e4fb4e418c3f7",
     "minodb": "Mino/MinoDB#develop",
     "extend": "MarcusLongmuir/extend",
     "body-parser": "*",

@@ -16,7 +16,7 @@ MinoCMS.prototype.init_path = function(name, callback) {
 			break;
 		}
 	}
-}
+};
 
 MinoCMS.prototype.get = function(address, callback) {
 	var cms = this;
@@ -51,7 +51,7 @@ MinoCMS.prototype.get = function(address, callback) {
 				callback(res);
 			}
 		}
-	})
+	});
 };
 
 (function($) {

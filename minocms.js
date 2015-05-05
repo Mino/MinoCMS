@@ -1,4 +1,4 @@
-var logger = require('tracer').console();
+var logger = require('mino-logger');
 var express = require('express');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
@@ -10,20 +10,20 @@ function MinoCMS(options) {
     cms.config_server = new express();
     cms.config_server.get("/*", function(req, res) {
         res.send("MinoCMS config");
-    })
+    });
 
     cms.folder_name = options.folder_name;
     cms.user = options.user;
     cms.full_path = '/' + cms.user + '/' + cms.folder_name + '/';
 
-    cms.data_server = express()
+    cms.data_server = express();
     cms.data_server.use(errorHandler());
-    cms.data_server.use(bodyParser());
+    cms.data_server.use(bodyParser.json());
     cms.data_server.use(express.static(path.join(__dirname, 'public')));
     cms.data_server.get("/path/:path", function(req,res) {
         cms.minodb.get([cms.full_path + req.params.path], function(get_err, get_res) {
             res.json(get_res.objects[0]);
-        })
+        });
     });
 
 }
@@ -31,7 +31,7 @@ function MinoCMS(options) {
 MinoCMS.prototype.get_config_server = function(){
     var cms = this;
     return cms.config_server;
-}
+};
 
 MinoCMS.prototype.info = function(){
     var cms = this;
@@ -40,7 +40,7 @@ MinoCMS.prototype.info = function(){
         name: "MinoCMS",
         display_name: "MinoCMS"
     };
-}
+};
 
 MinoCMS.prototype.init = function(minodb, callback){
     var cms = this;
@@ -53,7 +53,7 @@ MinoCMS.prototype.init = function(minodb, callback){
         "path": "/" + cms.user + "/",
         "folder": true
     }], function(err, res) {
-        logger.log(JSON.stringify(err, null, 4), res); 
+        logger.debug(JSON.stringify(err, null, 4), res); 
 
         minodb.save_type({
             "name":"cms_content",
@@ -63,13 +63,13 @@ MinoCMS.prototype.init = function(minodb, callback){
                 "type":"string"
             }
         }, function(err, res){
-            logger.log(JSON.stringify(err,null,4), res);
+            logger.debug(JSON.stringify(err,null,4), res);
 
             if (callback !== undefined) {
                 callback();
             }  
         }); 
     });
-}
+};
 
 module.exports = MinoCMS;
